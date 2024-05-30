@@ -1,0 +1,45 @@
+<body>
+    <div class="form-body">
+        <form [formGroup]="form" (submit)="aceptar()">
+            <mat-form-field class="example-full-width">
+                <mat-label>IdMascota</mat-label>
+                <input matInput formControlName="idMascota">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Direccion</mat-label>
+                <input matInput formControlName="direccion">
+            </mat-form-field>
+            <br>
+
+            <mat-form-field>
+                <mat-label>Fecha De nacimiento</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="fechaDenacimiento" max="maxDate" >
+                <mat-hint>DD/MM/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Tamañio</mat-label>
+                <input type="number" matInput formControlName="tamanio">
+            </mat-form-field>
+            <br>
+    
+            <mat-form-field>
+                <mat-label>Status</mat-label>
+                <mat-select formControlName="status" >
+                    <mat-option value="true">True</mat-option>
+                    <mat-option value="false">False</mat-option>
+                </mat-select>
+              </mat-form-field>
+    
+            <br>
+            <div class="button-sub-form">
+                <button mat-raised-button type="submit" color="primary">Aceptar</button>
+                <button mat-raised-button color="warn" routerLink="/mascotas">Cancelar</button>
+            </div>
+            <p>{{mensaje}}</p>
+        </form>
+    </div>
+</body>

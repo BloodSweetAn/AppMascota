@@ -1,0 +1,41 @@
+
+
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="idMascota">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.idMascota }} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="direccion">
+        <mat-header-cell *matHeaderCellDef mat-sort-header > Direccion </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.direccion}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="fechaDenacimiento">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de nacimiento </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.fechaDenacimiento}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="tamanio">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Tamañio </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.tamanio}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+      </ng-container>
+        
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator
+    #paginator
+    [pageSize]="4"
+    [pageSizeOptions]="[4, 8, 12]"
+    [showFirstLastButtons]="true"
+    >
+    </mat-paginator>
+  </div>
